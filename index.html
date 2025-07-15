@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Caleb Inyang | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: antiquewhite;
+      --text-color: #333;
+      --card-bg: white;
+      --link-color: #0077cc;
+    }
+
+    body.dark {
+      --bg-color: #121212;
+      --text-color: #f1f1f1;
+      --card-bg: #1e1e1e;
+      --link-color: #4da6ff;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    nav {
+      background: var(--card-bg);
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: var(--text-color);
+      font-weight: 500;
+    }
+
+    nav ul li a:hover {
+      color: var(--link-color);
+    }
+
+    .toggle-btn {
+      cursor: pointer;
+      background: var(--link-color);
+      border: none;
+      padding: 8px 12px;
+      color: white;
+      border-radius: 8px;
+    }
+
+    .container {
+      max-width: 500px;
+      background: var(--card-bg);
+      margin: 40px auto;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      color: var(--text-color);
+    }
+
+    .container img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      border: 3px solid #555;
+    }
+
+    h1, h2 {
+      color: var(--text-color);
+    }
+
+    p {
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul li {
+      background-color: #eee;
+      margin: 5px 0;
+      padding: 8px;
+      border-radius: 8px;
+      color: var(--text-color);
+    }
+
+    body.dark ul li {
+      background-color: #333;
+    }
+
+    #contact {
+      background-color: #f4f4f4;
+      padding: 30px 20px;
+      border-radius: 15px;
+      margin-top: 30px;
+    }
+
+    body.dark #contact {
+      background-color: #2c2c2c;
+    }
+
+    #contact a {
+      color: var(--link-color);
+      text-decoration: none;
+    }
+
+    #contact a:hover {
+      text-decoration: underline;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+    .skill {
+  margin: 15px 0;
+  text-align: left;
+}
+
+.skill-bar {
+  width: 100%;
+  background-color: #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 15px;
+  margin-top: 5px;
+}
+
+.skill-level {
+  height: 100%;
+  background-color: var(--link-color);
+  border-radius: 10px;
+  width: 0;
+  animation: fillBar 2s ease forwards;
+}
+
+.skill-level.html {
+  width: 70%;
+}
+
+.skill-level.js {
+  width: 45%;
+}
+
+.skill-level.problem {
+  width: 60%;
+}
+
+.skill-level.communication {
+  width: 80%;
+}
+
+@keyframes fillBar {
+  from {
+    width: 0;
+  }
+}
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .container {
+    width: 90%;
+    margin: 20px auto;
+    padding: 20px;
+  }
+
+  .container img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .skill p {
+    font-size: 14px;
+  }
+
+  p, ul li {
+    font-size: 14px;
+  }
+
+  .toggle-btn {
+    margin-top: 10px;
+    width: 100%;
+  }
+}
+#backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  display: none;
+  background-color: var(--link-color);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  z-index: 100;
+  transition: background-color 0.3s;
+}
+
+#backToTop:hover {
+  background-color: #005fa3;
+}
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#hobbies">Hobbies</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="toggle-btn" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+  </nav>
+
+  <div class="container" id="home">
+    <img src="Images/EZAO6547.JPG" alt="Caleb Inyang" />
+    <h1>Hello, I'm Caleb Inyang</h1>
+
+    <section id="about">
+      <h2>About Me</h2>
+      <p>Hello, I'm Caleb Inyang and welcome to my little side project. I am just learning what it means to be a web developer, and I hope I can get better.</p>
+    </section>
+
+    <section id="hobbies">
+      <h2>My Hobbies</h2>
+      <ul>
+        <li>Gaming</li>
+        <li>Playing Football</li>
+        <li>Watching Movies</li>
+        <li>Reading Novels</li>
+        <li>Playing The Saxophone</li>
+      </ul>
+    </section>
+
+    <h2>My Skills</h2>
+<div class="skill">
+  <p>HTML & CSS</p>
+  <div class="skill-bar">
+    <div class="skill-level html"></div>
+  </div>
+</div>
+
+<div class="skill">
+  <p>JavaScript</p>
+  <div class="skill-bar">
+    <div class="skill-level js"></div>
+  </div>
+</div>
+
+<div class="skill">
+  <p>Problem Solving</p>
+  <div class="skill-bar">
+    <div class="skill-level problem"></div>
+  </div>
+</div>
+
+<div class="skill">
+  <p>Communication</p>
+  <div class="skill-bar">
+    <div class="skill-level communication"></div>
+  </div>
+</div>
+
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <p>I'd love to hear your opinion!</p>
+      <p>Email: <a href="mailto:caleb705inyang@gmail.com">caleb705inyang@gmail.com</a></p>
+      <p>Phone: +234 704 472 5603</p>
+      <p>Instagram: <a href="https://www.instagram.com/itscalebiz/" target="_blank">@itscalebiz</a></p>
+    </section>
+  </div>
+
+  <script>
+  function toggleDarkMode() {
+    document.body.classList.toggle("dark");
+  }
+
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // Show button after scrolling down
+  window.onscroll = function () {
+    const btn = document.getElementById("backToTop");
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+      btn.style.display = "block";
+    } else {
+      btn.style.display = "none";
+    }
+  };
+  </script>
+  <button id="backToTop" onclick="scrollToTop()">↑ Back to Top</button>
+
+</body>
+</html>
